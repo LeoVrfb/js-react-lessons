@@ -1,10 +1,12 @@
 import './App.css';
-import ParentComponent from './components/ParentComponent';
+import CompteurJours from './components/appcompteurJours/CompteurJours';
+/* import ParentComponent from './components/ParentComponent' */
 
 function App() {
   return (
     <div className="App">
-      <ParentComponent/>
+        {/*<ParentComponent/> */}     
+       <CompteurJours/>
     </div>
   );
 }
