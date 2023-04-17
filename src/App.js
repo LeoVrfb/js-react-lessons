@@ -1,5 +1,7 @@
 import './App.css';
+import Tictactoe from './components/Tictactoe/Tictactoe';
 import CompteurJours from './components/appcompteurJours/CompteurJours';
+
 /* import ParentComponent from './components/ParentComponent' */
 
 function App() {
@@ -7,6 +9,7 @@ function App() {
     <div className="App">
         {/*<ParentComponent/> */}     
        <CompteurJours/>
+<Tictactoe/>
     </div>
   );
 }

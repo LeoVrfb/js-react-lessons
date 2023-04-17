@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { generateText } from '../gpt3';
+import { generateText } from '../../gpt3';
 
 function AskQuestion() {
   const [question, setQuestion] = useState('');
@@ -16,8 +16,13 @@ function AskQuestion() {
 
   return (
     <div>
-      <label htmlFor="question">Question:</label>
-      <input type="text" id="question" value={question} onChange={handleQuestionChange} />
+      <label htmlFor='question'>Question:</label>
+      <input
+        type='text'
+        id='question'
+        value={question}
+        onChange={handleQuestionChange}
+      />
 
       <button onClick={handleGenerateAnswer}>Generate answer</button>
 
