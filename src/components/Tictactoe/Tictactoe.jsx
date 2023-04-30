@@ -20,6 +20,7 @@ function Tictactoe() {
 
     for (let i = 0; i < winningConditions.length; i++) {
       const [a, b, c] = winningConditions[i];
+
       if (
         gameState[a] &&
         gameState[a] === gameState[b] &&
@@ -34,10 +35,11 @@ function Tictactoe() {
     return false;
   }
 
-  const gagnant = checkTheWinner(gameState, player);
+  const gagnant = checkTheWinner(gameState);
 
   const handleClick = (index) => {
     if (winner || gameState[index]) {
+
       return;
     }
     const newGameState = [...gameState];
