@@ -1,13 +1,13 @@
 import React from 'react';
-import { TaskData } from './types';
+import { LesTypes } from './LesTypes';
 
 interface TaskProps {
-    task: TaskData;
+    task: LesTypes;
     handleTaskCompletion: (taskId: string) => void;
     handleTaskDeletion: (taskId: string) => void;
 }
 
-const Task = ({
+const Tache = ({
     task,
     handleTaskCompletion,
     handleTaskDeletion
@@ -33,4 +33,4 @@ const Task = ({
     );
 };
 
-export default Task;
+export default Tache;

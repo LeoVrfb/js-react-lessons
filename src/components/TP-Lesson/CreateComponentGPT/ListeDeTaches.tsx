@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { TaskData } from './types';
-import Task from './Task';
+import { LesTypes } from './LesTypes';
+import Tache from './Tache';
 
 interface TaskListProps {
-    tasks: TaskData[];
+    tasks: LesTypes[];
     handleTaskCompletion: (taskId: string) => void;
     handleTaskDeletion: (taskId: string) => void;
-    completedTasks: TaskData[];
+    completedTasks: LesTypes[];
 }
 
-const TaskList = ({ tasks, handleTaskCompletion, handleTaskDeletion, completedTasks }: TaskListProps) => {
+const ListeDeTaches = ({ tasks, handleTaskCompletion, handleTaskDeletion, completedTasks }: TaskListProps) => {
     const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
 
     const filteredTasks = filter === 'completed' ? completedTasks :
@@ -28,7 +28,7 @@ const TaskList = ({ tasks, handleTaskCompletion, handleTaskDeletion, completedTa
                 <button onClick={() => handleFilterChange('completed')}>Completed</button>
             </div>
             {filteredTasks.map(task => (
-                <Task
+                <Tache
                     key={task.id}
                     task={task}
                     handleTaskCompletion={handleTaskCompletion}
@@ -39,4 +39,4 @@ const TaskList = ({ tasks, handleTaskCompletion, handleTaskDeletion, completedTa
     );
 };
 
-export default TaskList;
+export default ListeDeTaches;

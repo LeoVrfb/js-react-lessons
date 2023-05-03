@@ -4,7 +4,7 @@ type AddTaskProps = {
     handleTaskAddition: (taskText: string) => void;
 };
 
-const AddTask = ({ handleTaskAddition }: AddTaskProps) => {
+const AjoutTache = ({ handleTaskAddition }: AddTaskProps) => {
     const [newTaskText, setNewTaskText] = useState('');
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,4 +25,4 @@ const AddTask = ({ handleTaskAddition }: AddTaskProps) => {
     );
 };
 
-export default AddTask;
+export default AjoutTache;

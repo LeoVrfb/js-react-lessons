@@ -39,6 +39,15 @@ nav {
   left: 0;
 }
 
+.menu-ul .items#item-4 {
+  position: relative;
+}
+
+.menu-ul .items#item-4 .sous-menu-ul {
+  top: 100%;;
+  left: 0;
+}
+
 .sous-menu-ul {
   position: absolute;
   list-style: none;

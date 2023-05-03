@@ -28,19 +28,14 @@ import UseReducerLVL1 from './components/React-Lessons/useReducer/useReducerLVL1
 import UseReducerLVL2 from './components/React-Lessons/useReducer/useReducerLVL2';
 import UseReducerLVL3 from './components/React-Lessons/useReducer/ComplexUseReducer/useReducerLVL3';
 import Tictactoe from './components/React-Lessons/Tictactoe/Tictactoe';
-
-
-
-
-
+import TacheManager from './components/TP-Lesson/CreateComponentGPT/TacheManager';
+import Classes from './components/TP-Lesson/Classes/Classes';
+import ObjetInterface from './components/TP-Lesson/ObjetInterface/ObjetInterface';
 
 function App() {
   return (
     <div className="App">
-      
-
       <AuthProvider>
-
         <Router>
         <Menu />
           <Routes>
@@ -69,8 +64,9 @@ function App() {
             <Route path='/react/usereducerlvl2' element={<UseReducerLVL2 />} />
             <Route path='/react/usereducerlvl3' element={<UseReducerLVL3 />} />
             <Route path='/react/tictactoe' element={<Tictactoe />} />
-          
-          
+            <Route path='/typescript/tachemanager' element={<TacheManager />} />
+            <Route path='/typescript/classes' element={<Classes />} />
+            <Route path='/typescript/objetinterface' element={<ObjetInterface />} />
           </Routes>
         </Router>
       </AuthProvider>

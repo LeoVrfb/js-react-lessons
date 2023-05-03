@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LesClasses = () => {
+const Classes = () => {
 
     class UserProfile {
         [key: string]: any;
@@ -40,4 +40,4 @@ const LesClasses = () => {
 
 
 
-export default LesClasses;
+export default Classes;

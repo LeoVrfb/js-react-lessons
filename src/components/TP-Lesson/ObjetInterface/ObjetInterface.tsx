@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InterfaceObject = () => {
+const ObjetInterface = () => {
     interface Object {
         [key: string]: any;
         sayHello: { (name: string): string };
@@ -23,4 +23,4 @@ const InterfaceObject = () => {
     )
 }
 
-export default InterfaceObject
+export default ObjetInterface
