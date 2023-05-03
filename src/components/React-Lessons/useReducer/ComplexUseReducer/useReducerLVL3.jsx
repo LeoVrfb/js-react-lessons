@@ -109,7 +109,6 @@ function UseReducerLVL3() {
       <TodoForm onAddTodo={handleAddTodo} />
       <TodoList
         todos={filteredTodos}
-        filter={state.filter}
         onToggleTodo={handleToggleTodo}
         onDeleteTodo={handleDeleteTodo}
       />

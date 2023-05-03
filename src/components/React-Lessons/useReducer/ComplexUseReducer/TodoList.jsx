@@ -1,4 +1,4 @@
-const TodoList = ({ todos, onToggleTodo, onDeleteTodo, filter }) => {
+const TodoList = ({ todos, onToggleTodo, onDeleteTodo }) => {
     const handleToggle = (id) => {
         onToggleTodo(id)
     };
@@ -6,15 +6,7 @@ const TodoList = ({ todos, onToggleTodo, onDeleteTodo, filter }) => {
     const handleDelete = (id) => {
         onDeleteTodo(id)
     };
-    const filteredTodos = todos.filter((task) => {
-        if (filter === 'completed') {
-            return task.completed;
-        } else if (filter === 'active') {
-            return !task.completed;
-        } else {
-            return true;
-        }
-    }).map((task) => (
+    const filteredTodos = todos.map((task) => (
         <li key={task.id}>
             <label>
                 <input type="checkbox" checked={task.completed} onChange={() => handleToggle(task.id)} />

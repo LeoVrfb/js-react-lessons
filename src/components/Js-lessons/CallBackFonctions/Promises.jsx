@@ -42,12 +42,13 @@ const Promises = () => {
             .then(data => {
                 return getUserPosts(`${baseURL}/posts?userId=${data.id}`)
             })
-            .then(data => console.log(data))
+            .then(data => setData(data))
             .catch(error => console.log(error))
     }, [])
 
     return (
         <div>
+            <h3>Les promises</h3>
             {data && data.map(item => <p key={item.id}>{item.title}</p>)}
         </div>
     )

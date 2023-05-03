@@ -18,11 +18,12 @@ function reducer(state, action) {
   }
 }
 
-function MiddleUseReducer() {
+function useReducerLV2() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div>
+      <h2>useReducer 2</h2>
       <h2>Counter: {state.counter}</h2>
       <button onClick={() => dispatch({ type: 'increment' })}>+</button>
       <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
@@ -30,4 +31,4 @@ function MiddleUseReducer() {
     </div>
   );
 }
-export default MiddleUseReducer
+export default useReducerLV2

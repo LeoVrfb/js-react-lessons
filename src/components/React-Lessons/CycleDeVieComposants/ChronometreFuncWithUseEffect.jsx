@@ -1,36 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function ChronometreFunc() {
-    const [seconds, setSeconds] = useState(0);
-    const [intervalId, setIntervalId] = useState(null);
+const ChronometreFuncUse = () => {
+  const [seconds, setSeconds] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-    function startChrono() {
-        if (!intervalId) {
-            const newIntervalId = setInterval(() => {
-                setSeconds(prevSeconds => prevSeconds + 1);
-            }, 1000);
-            setIntervalId(newIntervalId);
-        }
-    }
-
-    function pauseChrono() {
-        clearInterval(intervalId);
-        setIntervalId(null);
-    }
-
-    function resetChrono() {
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === 'p') {
+        setIsPaused((prevIsPaused) => !prevIsPaused);
+      } else if (event.key === 'r') {
         setSeconds(0);
-        pauseChrono();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
+
+  useEffect(() => {
+    let intervalId;
+    if (!isPaused) {
+      intervalId = setInterval(() => {
+        setSeconds((prevSeconds) => prevSeconds + 1);
+      }, 1000);
     }
+    return () => clearInterval(intervalId);
+  }, [isPaused]);
 
-    return (
-        <div>
-            <h1>{seconds} seconds</h1>
-            <button onClick={startChrono}>Start</button>
-            <button onClick={pauseChrono}>Pause</button>
-            <button onClick={resetChrono}>Reset</button>
-        </div>
-    );
-}
+  const handlePauseClick = () => {
+    setIsPaused((prevIsPaused) => !prevIsPaused);
+  };
 
-export default ChronometreFunc;
+  const handleResetClick = () => {
+    setSeconds(0);
+    setIsPaused(false);
+  };
+
+  return (
+    <div>
+      <h1>Chronometer</h1>
+      <h2>{seconds} seconds</h2>
+      <button onClick={handlePauseClick}>{isPaused ? 'Resume' : 'Pause'}</button>
+      <button onClick={handleResetClick}>Reset</button>
+    </div>
+  );
+};
+
+export default ChronometreFuncUse;
