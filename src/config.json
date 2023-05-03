@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+
+    },
+    "references": [
+      {
+        "path": "../src/tp-tuto"
+      }
+    ]
+  }
+  
