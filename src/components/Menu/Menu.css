@@ -5,7 +5,7 @@ nav {
   position: relative;
 }
 
-.menu-ul {
+.menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,40 +15,15 @@ nav {
   height: 50px;
 }
 
-.menu-ul .items {
+.menu .items {
   cursor: pointer;
   margin: 0 50px;
   text-align: center;
-}
-
-.menu-ul .items#item-2 {
   position: relative;
 }
 
-.menu-ul .items#item-2 .sous-menu-ul {
-  top: 100%;
-  left: 0;
-}
 
-.menu-ul .items#item-3 {
-  position: relative;
-}
-
-.menu-ul .items#item-3 .sous-menu-ul {
-  top: 100%;;
-  left: 0;
-}
-
-.menu-ul .items#item-4 {
-  position: relative;
-}
-
-.menu-ul .items#item-4 .sous-menu-ul {
-  top: 100%;;
-  left: 0;
-}
-
-.sous-menu-ul {
+.dropdown {
   position: absolute;
   list-style: none;
   top: 100%;
@@ -56,11 +31,14 @@ nav {
   padding: 0;
   margin: 0;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
+.menu .items:hover .dropdown {
+  opacity: 1;
+}
 
-.sous-menu-ul .sous-items {
+.dropdown .sous-items {
   display: flex;
   position: relative;
   justify-content: center;
@@ -73,58 +51,70 @@ nav {
   width: 150px;
 }
 
-.sous-menu-ul .sous-items:hover {
+.dropdown .sous-items:hover {
   background-color: #bababa;
   border-color: #999;
 }
 
-
-.sous_menu_ul_2 {
+.submenu {
   position: absolute;
   opacity: 0;
   top: 0;
   left: 100%;
-  margin-top: -10px;
   padding: 0;
   list-style: none;
   background-color: #fff;
   border: 1px solid #ccc;
 }
 
-.sous-menu-ul .sous-items:hover .sous_menu_ul_2 {
+.dropdown .sous-items:hover .submenu {
   opacity: 1;
 }
 
-.sous-items .sous_menu_ul_2 {
+.sous-items .submenu {
   position: absolute;
   top: 0;
   left: 100%;
-  display: flex;
 }
 
-.sous_menu_ul_2 .sous_items_2 {
+.submenu .sous_items_2 {
   text-align: left;
   padding: 5px;
   width: 100%;
-}
-
-.sous_menu_ul_2 .sous_items_2 a {
   text-decoration: none;
   color: #333;
 }
 
-.items#item-2 {
+
+
+
+
+
+
+
+
+
+
+/******************************************
+
+
+/* .menu-ul .items#item-2 {
   position: relative;
 }
 
-.items#item-2 .sous-menu-ul {
-  top: calc(100%);
-  right:0;
-  transform: translateX(-50%);
+.menu-ul .items#item-2 .dropdown {
+  top: 100%;
+  left: 0;
 }
-.menu-ul .items:hover .sous-menu-ul {
-  opacity: 1;
+
+.menu-ul .items#item-3 {
+  position: relative;
 }
+
+.menu-ul .items#item-3 .dropdown {
+  top: 100%;;
+  left: 0;
+} */
 
 
 

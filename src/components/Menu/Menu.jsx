@@ -18,7 +18,7 @@ function Menu() {
 
   return (
     <nav >
-      <ul className="menu-ul">
+      <ul className="menu">
         <li className='items'>
           <NavLink to="/">Accueil</NavLink>
         </li>
@@ -28,7 +28,7 @@ function Menu() {
           Javascript
 
           {isHovering && (
-            <ul className="sous-menu-ul" >
+            <ul className="dropdown" id='dd2' >
               <li className='sous-items'>
                 <NavLink to="/notionsdejs/lesbouclesjs">Les boucles en js</NavLink>
               </li>
@@ -43,7 +43,7 @@ function Menu() {
               </li>
               <li className='sous-items'>
                 Méthodes en JS
-                <ul className="sous_menu_ul_2" id="sous_menu_ul_2" >
+                <ul className="submenu" id="submenu" >
                   <li className="sous-items sous_items_2">
                     <NavLink to="/notionsdejs/methodesjsmutatrices" >Méthodes mutatrices</NavLink>
                   </li>
@@ -55,7 +55,7 @@ function Menu() {
               <li className='sous-items'>
                 Callback fonctions
 
-                <ul className="sous_menu_ul_2 " id="sous_menu_ul_2">
+                <ul className="submenu " id="submenu">
                   <li className=" sous-items sous_items_2 " >
                     <NavLink to="/notionsdejs/why" >Why</NavLink>
                   </li>
@@ -73,7 +73,7 @@ function Menu() {
               </li>
               <li className='sous-items'>
                 Mes tests perso
-                <ul className="sous_menu_ul_2" id="sous_menu_ul_2">
+                <ul className="submenu" id="submenu">
                   <li className="sous-items sous_items_2">
                     <NavLink to="/notionsdejs/tester" >Tester</NavLink>
                   </li>
@@ -93,13 +93,13 @@ function Menu() {
           onMouseLeave={handleMouseLeave}>
           React
           {isHovering && (
-            <ul className="sous-menu-ul" >
+            <ul className="dropdown" id='dd3' >
               <li className='sous-items'>
                 <NavLink to="/react/tictactoe">Tictactoe</NavLink>
               </li>
               <li className='sous-items'>
                 Le cycle de vie
-                <ul className="sous_menu_ul_2" id="sous_menu_ul_2">
+                <ul className="submenu" id="submenu">
                   <li className="sous-items sous_items_2">
                     <NavLink to="/react/cycledevie" >Cycles de vie</NavLink>
                   </li>
@@ -116,7 +116,7 @@ function Menu() {
               </li>
               <li className='sous-items'>
                 Les références
-                <ul className="sous_menu_ul_2" id="sous_menu_ul_2">
+                <ul className="submenu" id="submenu">
                   <li className="sous-items sous_items_2">
                     <NavLink to="/react/refclasse" >RefClasse</NavLink>
                   </li>
@@ -127,7 +127,7 @@ function Menu() {
               </li>
               <li className='sous-items'>
                 Les contextes
-                <ul className="sous_menu_ul_2" id="sous_menu_ul_2">
+                <ul className="submenu" id="submenu">
                   <li className="sous-items sous_items_2">
                     <NavLink to="/react/usecontextlvl1" >UseContextLVL1</NavLink>
                   </li>
@@ -138,7 +138,7 @@ function Menu() {
               </li>
               <li className='sous-items'>
                 useReducer
-                <ul className="sous_menu_ul_2" id="sous_menu_ul_2">
+                <ul className="submenu" id="submenu">
                   <li className="sous-items sous_items_2">
                     <NavLink to="/react/usereducerlvl1" >useReducerLV1</NavLink>
                   </li>
@@ -159,10 +159,10 @@ function Menu() {
           onMouseLeave={handleMouseLeave}>
           Typescript
           {isHovering && (
-            <ul className="sous-menu-ul" >
+            <ul className="dropdown" id='dd4'>
               <li className='sous-items'>
                 L'objet Interface
-                <ul className="sous_menu_ul_2" id="sous_menu_ul_2">
+                <ul className="submenu" id="submenu">
                   <li className="sous-items sous_items_2">
                     <NavLink to="/typescript/objetinterface" >InterfaceObject</NavLink>
                   </li>
@@ -170,7 +170,7 @@ function Menu() {
               </li>
               <li className='sous-items'>
                   Les classes
-                <ul className="sous_menu_ul_2" id="sous_menu_ul_2">
+                <ul className="submenu" id="submenu">
                   <li className="sous-items sous_items_2">
                     <NavLink to="/typescript/classes" >Les classes</NavLink>
                   </li>
@@ -178,30 +178,13 @@ function Menu() {
               </li>
               <li className='sous-items'>
                   TaskManager
-                <ul className="sous_menu_ul_2" id="sous_menu_ul_2">
+                <ul className="submenu" id="submenu">
                   <li className="sous-items sous_items_2">
                     <NavLink to="/typescript/tachemanager" >TaskManager</NavLink>
                   </li>
                 </ul>
               </li>
              
-            </ul>
-          )}
-
-        </li>
-        <li className='items' id='item-5' onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}>
-          redux
-          {isHovering && (
-            <ul className="sous-menu-ul" >
-              <li className='sous-items'>
-                L'objet Interface
-                <ul className="sous_menu_ul_2" id="sous_menu_ul_2">
-                  <li className="sous-items sous_items_2">
-                    <NavLink to="/redux/futurfichier" >Futurfichier</NavLink>
-                  </li>
-                </ul>
-              </li>
             </ul>
           )}
 
@@ -215,41 +198,3 @@ function Menu() {
 }
 
 export default Menu;
-
-
-/* <li className='items' id='item-4' onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            Typescript
-
-            {isHovering && (
-              <ul className="sous-menu-ul" >
-                <li className='sous-items'>
-                  Les Interfaces
-                  <ul className="sous_menu_ul_2" id="sous_menu_ul_2" >
-                    <li className="sous-items sous_items_2">
-                      <NavLink to="/typescript/interfaceobject" >L'objet Interface</NavLink>
-                    </li>
-                  </ul>
-                </li>
-                <li className='sous-items'>
-                  Les classes
-                  <ul className="sous_menu_ul_2 " id="sous_menu_ul_2">
-                    <li className=" sous-items sous_items_2 " >
-                      <NavLink to="/typescript/lesclasses" >Les Classes</NavLink>
-                    </li>
-                  </ul>
-
-                </li>
-                <li className='sous-items'>
-                  ProjetGPTtask
-                  <ul className="sous_menu_ul_2" id="sous_menu_ul_2">
-                    <li className="sous-items sous_items_2">
-                      <NavLink to="/typescript/taskmanager" >TaskManager</NavLink>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            )}
-
-          </li>*/
