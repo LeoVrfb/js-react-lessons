@@ -22,7 +22,6 @@ nav {
   position: relative;
 }
 
-
 .dropdown {
   position: absolute;
   list-style: none;
@@ -30,13 +29,14 @@ nav {
   left: 0;
   padding: 0;
   margin: 0;
-  opacity: 0;
   transition: 0.3s ease-in-out;
+  display: none;
 }
 
-.menu .items:hover .dropdown {
-  opacity: 1;
+.items:hover .dropdown {
+  display: block;
 }
+
 
 .dropdown .sous-items {
   display: flex;
@@ -58,17 +58,17 @@ nav {
 
 .submenu {
   position: absolute;
-  opacity: 0;
   top: 0;
   left: 100%;
   padding: 0;
+  display: none;
   list-style: none;
   background-color: #fff;
   border: 1px solid #ccc;
 }
 
-.dropdown .sous-items:hover .submenu {
-  opacity: 1;
+.sous-items:hover .submenu {
+  display: block;
 }
 
 .sous-items .submenu {
@@ -84,37 +84,6 @@ nav {
   text-decoration: none;
   color: #333;
 }
-
-
-
-
-
-
-
-
-
-
-
-/******************************************
-
-
-/* .menu-ul .items#item-2 {
-  position: relative;
-}
-
-.menu-ul .items#item-2 .dropdown {
-  top: 100%;
-  left: 0;
-}
-
-.menu-ul .items#item-3 {
-  position: relative;
-}
-
-.menu-ul .items#item-3 .dropdown {
-  top: 100%;;
-  left: 0;
-} */
 
 
 

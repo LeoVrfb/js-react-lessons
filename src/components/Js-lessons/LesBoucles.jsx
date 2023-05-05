@@ -60,6 +60,38 @@ const LesBoucles = () => {
             console.log('nombre invalide');
     }
 
+    function displayDayOfWeek(day) {
+        let dayOfWeek;
+
+        switch (day) {
+            case 0:
+                dayOfWeek = "Sunday";
+                break;
+            case 1:
+                dayOfWeek = "Monday";
+                break;
+            case 2:
+                dayOfWeek = "Tuesday";
+                break;
+            case 3:
+                dayOfWeek = "Wednesday";
+                break;
+            case 4:
+                dayOfWeek = "Thursday";
+                break;
+            case 5:
+                dayOfWeek = "Friday";
+                break;
+            case 6:
+                dayOfWeek = "Saturday";
+                break;
+            default:
+                dayOfWeek = "Invalid day";
+        }
+
+        return `The day of the week is ${dayOfWeek}`;
+    }
+
     let score = 45;
     if (true) {
         var test = 9;
@@ -99,6 +131,8 @@ const LesBoucles = () => {
             <div>{score} </div>
             <div>{h} </div>
             <div>{test} </div>
+            {displayDayOfWeek(2)}
+
         </div>
     )
 }

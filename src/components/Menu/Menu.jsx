@@ -1,18 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Menu.css'
 import { NavLink } from 'react-router-dom';
 
 function Menu() {
 
-  const [isHovering, setIsHovering] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-  };
 
 
 
@@ -22,12 +14,11 @@ function Menu() {
         <li className='items'>
           <NavLink to="/">Accueil</NavLink>
         </li>
-        <li className='items' id='item-2' onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+        <li className='items' id='item-2' 
         >
-          Javascript
+           Javascript
 
-          {isHovering && (
+         
             <ul className="dropdown" id='dd2' >
               <li className='sous-items'>
                 <NavLink to="/notionsdejs/lesbouclesjs">Les boucles en js</NavLink>
@@ -83,16 +74,15 @@ function Menu() {
                 </ul>
               </li>
             </ul>
-          )}
+
 
 
 
         </li>
 
-        <li className='items' id='item-3' onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}>
-          React
-          {isHovering && (
+        <li className='items' id='item-3'>
+        React
+
             <ul className="dropdown" id='dd3' >
               <li className='sous-items'>
                 <NavLink to="/react/tictactoe">Tictactoe</NavLink>
@@ -151,14 +141,12 @@ function Menu() {
                 </ul>
               </li>
             </ul>
-          )}
+
 
         </li>
 
-        <li className='items' id='item-4' onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}>
-          Typescript
-          {isHovering && (
+        <li className='items' id='item-4' >
+        Typescript
             <ul className="dropdown" id='dd4'>
               <li className='sous-items'>
                 L'objet Interface
@@ -186,7 +174,6 @@ function Menu() {
               </li>
              
             </ul>
-          )}
 
         </li>
       </ul>

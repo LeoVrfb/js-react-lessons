@@ -55,6 +55,10 @@ const Tester = () => {
   };
   console.log(obj);
 
+  const tablo = [[1, 2], [3, 4]];
+  const tablo2 = { 0 : [1,2], 1 : [3, 4] };
+
+
   return (
     <div>
       <div>{typeof age} {age}</div>
@@ -68,6 +72,7 @@ const Tester = () => {
       <TesterChild argument1={etat} argument2={etat2} />
       {truc}
       <button onClick={handleClick}>click me</button>
+      {tablo[0][0]}
     </div>
   )
 }
