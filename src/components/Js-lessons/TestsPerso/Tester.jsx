@@ -56,7 +56,19 @@ const Tester = () => {
   console.log(obj);
 
   const tablo = [[1, 2], [3, 4]];
-  const tablo2 = { 0 : [1,2], 1 : [3, 4] };
+  const tablo2 = { 0: [1, 2], 1: [3, 4] };
+
+  const fruits = [
+    { name: 'apple', color: 'red' },
+    { name: 'banana', color: 'yellow' },
+    { name: 'orange', color: 'orange' }
+  ];
+
+  const apple = { name: 'apple', color: 'red' };
+  const banana = { name: 'banana', color: 'yellow' };
+
+  console.log(fruits.some(arr => JSON.stringify(arr) === JSON.stringify([1, 2]))); // true
+
 
 
   return (
@@ -73,6 +85,9 @@ const Tester = () => {
       {truc}
       <button onClick={handleClick}>click me</button>
       {tablo[0][0]}
+
+
+
     </div>
   )
 }

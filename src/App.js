@@ -31,13 +31,15 @@ import Tictactoe from './components/React-Lessons/Tictactoe/Tictactoe';
 import TacheManager from './components/TP-Lesson/CreateComponentGPT/TacheManager';
 import Classes from './components/TP-Lesson/Classes/Classes';
 import ObjetInterface from './components/TP-Lesson/ObjetInterface/ObjetInterface';
+import PrivateVsProtected from './components/TP-Lesson/Classes/PrivateVsProtected.tsx';
+import DateObject from './components/Js-lessons/ObjetsJs/Date';
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
         <Router>
-        <Menu />
+          <Menu />
           <Routes>
             <Route path='/notionsdejs/lesbouclesjs' element={<LesBoucles />} />
             <Route path='/notionsdejs/fonctionsettableaux' element={<FonctionsEtTableaux />} />
@@ -49,6 +51,7 @@ function App() {
             <Route path='/notionsdejs/usefull' element={<UseFull />} />
             <Route path='/notionsdejs/callback' element={<CallBack />} />
             <Route path='/notionsdejs/promises' element={<Promises />} />
+            <Route path='/notionsdejs/date' element={<DateObject />} />
             <Route path='/notionsdejs/tester' element={<Tester />} />
             <Route path='/notionsdejs/testerchild' element={<TesterChild />} />
             <Route path='/react/cycledevie' element={<CycleDeVie />} />
@@ -67,6 +70,7 @@ function App() {
             <Route path='/typescript/tachemanager' element={<TacheManager />} />
             <Route path='/typescript/classes' element={<Classes />} />
             <Route path='/typescript/objetinterface' element={<ObjetInterface />} />
+            <Route path='/typescript/privatevsprotected' element={<PrivateVsProtected />} />
           </Routes>
         </Router>
       </AuthProvider>
