@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import TesterChild from './TesterChild';
 
 const Tester = () => {
@@ -24,8 +24,7 @@ const Tester = () => {
     console.log(i);
   }
 
-  const [etat, setEtat] = useState('hello')
-  const [etat2, setEtat2] = useState('hello guys')
+
   const [truc, setTruc] = useState(["A", "B", "C"])
   const obj = { nom: 'john' };
   obj.age = 30;
@@ -69,6 +68,18 @@ const Tester = () => {
 
   console.log(fruits.some(arr => JSON.stringify(arr) === JSON.stringify([1, 2]))); // true
 
+  const [etat, setEtat] = useState('');
+
+
+  const handleChange = (value) => {
+    setEtat(value)
+  }
+  const handleClicked = () => {
+    if (etat === '') {
+      return
+    }
+    setEtat('')
+  }
 
 
   return (
@@ -81,7 +92,7 @@ const Tester = () => {
       <div>{typeof check} {check ? 'true' : "false"}</div>
       <div>{typeof number_name}{number_name}</div>
       <div>{typeof string_number}{string_number}</div>
-      <TesterChild argument1={etat} argument2={etat2} />
+      <TesterChild nom={etat} change={handleChange} click={handleClicked} />
       {truc}
       <button onClick={handleClick}>click me</button>
       {tablo[0][0]}
