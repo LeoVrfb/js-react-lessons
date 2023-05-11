@@ -1,6 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import Why from './Why';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
 
 const CallBack = () => {
 

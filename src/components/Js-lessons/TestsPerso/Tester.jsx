@@ -81,6 +81,15 @@ const Tester = () => {
     setEtat('')
   }
 
+  const obj9 = { a: 1, b: 2, c: 3 };
+
+  for (let key in obj9) {
+    if (obj9.hasOwnProperty(key)) {
+      const value = obj9[key];
+      console.log(value);
+    }
+  }
+
 
   return (
     <div>

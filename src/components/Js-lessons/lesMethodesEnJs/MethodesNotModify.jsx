@@ -56,6 +56,79 @@ const MethodesNotModify = () => {
         return acc;
     }, { id: [], name: [], age: [] });
 
+    // \\// \\// \\// \\// \\
+
+    const fruitsTab = ['pomme', 'banane', 'orange'];
+    const objetFruits = fruitsTab.reduce((acc, fruit, index) => {
+        acc[index] = fruit;
+        return acc;
+    }, {});
+
+    console.log(objetFruits); // {0: "pomme", 1: "banane", 2: "orange"}
+
+    // \\// \\// \\// \\// \\
+
+    const commandes = [
+        { client: "Alice", produit: "Chaise", prixUnitaire: 25, quantite: 2 },
+        { client: "Bob", produit: "Table", prixUnitaire: 50, quantite: 1 },
+        { client: "Alice", produit: "Canapé", prixUnitaire: 200, quantite: 1 },
+        { client: "Charlie", produit: "Fauteuil", prixUnitaire: 75, quantite: 2 },
+        { client: "Bob", produit: "Lampe", prixUnitaire: 10, quantite: 4 }
+    ];
+
+    const chiffreAffaires = commandes.reduce((resultat, commande) => {
+        const { client, prixUnitaire, quantite } = commande;
+        const montant = prixUnitaire * quantite;
+        if (resultat[client]) {
+            resultat[client] += montant;
+        } else {
+            resultat[client] = montant;
+        }
+        return resultat;
+    }, {});
+
+    console.log(chiffreAffaires); // { "Alice": 250, "Bob": 90, "Charlie": 150 }
+
+    const students = [
+        { nom: "Alice", moyenne: 14 },
+        { nom: "Bob", moyenne: 12 },
+        { nom: "Charlie", moyenne: 16 },
+        { nom: "David", moyenne: 18 },
+        { nom: "Eve", moyenne: 15 },
+    ];
+
+    const moyenneDesMoyennes = students.reduce((acc, cur) => {
+        acc += cur.moyenne
+        return acc;
+
+    }, 0) / students.length
+
+    console.log(moyenneDesMoyennes)
+
+    const transactions = [
+        { type: "dépôt", montant: 100 },
+        { type: "retrait", montant: 50 },
+        { type: "dépôt", montant: 200 },
+        { type: "retrait", montant: 75 },
+    ];
+
+    const results = transactions.reduce((acc, cur) => {
+        const { type, montant } = cur;
+        if (!acc[type]) {
+            acc[type] = montant;
+        } else {
+            acc[type] += montant;
+        }
+        return acc;
+    }, {});
+
+
+    console.log(results)
+
+
+
+
+
     /* On espace tous les noms avec un espace */
     const spaceName = noms.reduce((accumulator, currentValue) => { return accumulator + ' ' + currentValue });
 
@@ -65,10 +138,15 @@ const MethodesNotModify = () => {
 
 
     // LA METHODE FILTER()
+    // Important ! La fonction de rappel qui est appelée dans la méthode filter renvoie une valeur booléenne. Tout ce qui dans la condition renvoie true est ajouté au nouveau tableau, tout ce qui renvoie false est supprimé. exemple : 
+    //const tableau = [1, 2, 3, 4, 5];
+    // const nouveauTableau = tableau.filter(element => element !== 2); "l'élément est différent de 2" = true
+    // console.log(nouveauTableau); // [1, 3, 4, 5]; donc le 2 est supprimé, car il renvoie false
+
 
     const removeName = noms.filter((nom) => nom !== 'marie'); /* on remove un élément spécifique du tableau*/
     const selectName = noms.filter((nom) => nom === 'marie') /* on ne garde qu'un élément spécifique du tableau*/
-    const pairs = nombre.filter((number) => number % 2 === 0) /* on sélectionne les nombres pairs */
+    const pairs = nombre.filter((number) => number % 2 === 0) /* on ne garde que les nombres pairs */
     const filteredUsers = users.filter(user => user.id !== 3); /* on supprime un élément d'un tableau d'objet */
 
 
@@ -119,6 +197,42 @@ const MethodesNotModify = () => {
     const moreNumbers = [2, 4, 6, 7, 8];
     const allEven2 = moreNumbers.every((num) => num % 2 === 0);
     console.log(allEven2); // false
+
+    // LA METHODE MAP
+
+    const num = [1, 2, 3, 4, 5];
+    const strings = num.map((number) => String(number));
+    // Résultat : ["1", "2", "3", "4", "5"]
+
+    //La methode localeCompare
+    //La methode contains
+    //La methode fromEntries
+
+    //La méthode sort 
+
+    const myFruits = ['orange', 'banane', 'pomme', 'ananas'];
+
+    myFruits.sort(); // range les fruits dans l'ordre alphabétique
+    myFruits.sort((a, b) => b.localeCompare(a)); // ['pomme', 'orange', 'banane', 'ananas'] range les fruits dans l'ordre analphabétique
+    const newFruits = ['pomme', 'poire', 'peche', 'pomme']; // Il y a plusieurs mot similaires dans le tableau
+    newFruits.sort((a, b) => a.localeCompare(b));
+    console.log(newFruits); // ['peche', 'pomme', 'pomme', 'poire']
+
+
+    const myNumbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+    myNumbers.sort((a, b) => a - b);
+    console.log(numbers); // [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9] Il y avait plusieurs nombres similaires donc la méthode doit prendre un calcul
+    myNumbers.sort((a, b) => b - a);
+    console.log(myNumbers); // [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1] Ordre décroissant
+
+
+    //La méthode trim()
+
+    //LA METHODE FIND()
+    const numbersTofind = [1, 3, 4, 7, 6, 9];
+    const firstEvenNumber = numbersTofind.find(num => num % 2 === 0);
+
+    console.log(firstEvenNumber); // Résultat : 4
 
 
 
