@@ -59,7 +59,15 @@ const Array = () => {
         label: option.textContent,
     }));
 
-    console.log(options);
+    console.log(options); // voir dans le jsx
+
+    // résultat:
+
+    // [
+    //     { value: "1", label: "Option 1" },
+    //     { value: "2", label: "Option 2" },
+    //     { value: "3", label: "Option 3" }
+    //   ]
 
 
 

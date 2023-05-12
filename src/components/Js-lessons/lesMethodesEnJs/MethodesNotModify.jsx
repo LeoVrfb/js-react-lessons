@@ -228,11 +228,11 @@ const MethodesNotModify = () => {
 
     //La méthode trim()
 
-    //LA METHODE FIND()
+    //LA METHODE FIND(), trouve le premier élément qui satisfait une condition
     const numbersTofind = [1, 3, 4, 7, 6, 9];
     const firstEvenNumber = numbersTofind.find(num => num % 2 === 0);
 
-    console.log(firstEvenNumber); // Résultat : 4
+    console.log(firstEvenNumber); // Résultat : 4, 
 
 
 

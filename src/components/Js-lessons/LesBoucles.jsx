@@ -18,6 +18,8 @@ const LesBoucles = () => {
         console.log(nom[i]);
         i++
     }
+
+    
     let a = 0;
     do { //faire ça...
         console.log(nom[a]);

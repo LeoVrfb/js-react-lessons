@@ -9,11 +9,12 @@ class Person {
     }
 }
 
-function loggedMethod(originalMethod: any, context: any) {
+function loggedMethod(originalMethod: any, context: ClassMethodDecoratorContext) {
+    const {name: methodName} = context
     return function replacementFunction(this: any, ...args: any) {
-        console.log(`Enter in method`)
+        console.log(`Enter in method ${String(methodName)}`)
         const result = originalMethod.call(this, ...args)
-        console.log(`Exit from method`)
+        console.log(`Exit from method ${String(methodName)}`)
         return result
     }
 }

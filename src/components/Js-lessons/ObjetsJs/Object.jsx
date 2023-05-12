@@ -82,7 +82,6 @@ const Object = () => {
 
 
 
-
     //// POO progrmmation orientée objet
 
     function Personne(nom, age, sexe) {
