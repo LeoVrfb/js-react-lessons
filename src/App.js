@@ -1,24 +1,24 @@
-import React from 'react'
+import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AuthProvider from './components/React-Lessons/useContext/useContextLVL2/AuthProvider';
-import Menu from './components/Menu/Menu'
-import LesBoucles from './components/Js-lessons/LesBoucles'
-import FonctionsEtTableaux from './components/Js-lessons/FonctionsEtTableaux'
-import ControlerLeDom from './components/Js-lessons/ControlerLeDom'
-import DixHacksJs from './components/Js-lessons/DixHacksJs'
-import MethodesModify from './components/Js-lessons/lesMethodesEnJs/MethodesModify'
-import MethodesNotModify from './components/Js-lessons/lesMethodesEnJs/MethodesNotModify'
-import Why from './components/Js-lessons/CallBackFonctions/Why'
-import UseFull from './components/Js-lessons/CallBackFonctions/UseFull'
-import CallBack from './components/Js-lessons/CallBackFonctions/CallBack'
-import Promises from './components/Js-lessons/CallBackFonctions/Promises'
-import Tester from './components/Js-lessons/TestsPerso/Tester'
-import TesterChild from './components/Js-lessons/TestsPerso/TesterChild'
-import CycleDeVie from './components/React-Lessons/CycleDeVieComposants/CycleDeVie'
-import Chronometre from './components/React-Lessons/CycleDeVieComposants/Chronometre'
-import ChronometreFunc from './components/React-Lessons/CycleDeVieComposants/ChronometreFuncSansUseEffect'
-import ChronometreFuncWithUseEffect from './components/React-Lessons/CycleDeVieComposants/ChronometreFuncWithUseEffect'
+import Menu from './components/Menu/Menu';
+import LesBoucles from './components/Js-lessons/LesBoucles';
+import FonctionsEtTableaux from './components/Js-lessons/FonctionsEtTableaux';
+import ControlerLeDom from './components/Js-lessons/ControlerLeDom';
+import DixHacksJs from './components/Js-lessons/DixHacksJs';
+import MethodesModify from './components/Js-lessons/lesMethodesEnJs/MethodesModify';
+import MethodesNotModify from './components/Js-lessons/lesMethodesEnJs/MethodesNotModify';
+import Why from './components/Js-lessons/CallBackFonctions/Why';
+import UseFull from './components/Js-lessons/CallBackFonctions/UseFull';
+import CallBack from './components/Js-lessons/CallBackFonctions/CallBack';
+import Promises from './components/Js-lessons/CallBackFonctions/Promises';
+import Tester from './components/Js-lessons/TestsPerso/Tester';
+import TesterChild from './components/Js-lessons/TestsPerso/TesterChild';
+import CycleDeVie from './components/React-Lessons/CycleDeVieComposants/CycleDeVie';
+import Chronometre from './components/React-Lessons/CycleDeVieComposants/Chronometre';
+import ChronometreFunc from './components/React-Lessons/CycleDeVieComposants/ChronometreFuncSansUseEffect';
+import ChronometreFuncWithUseEffect from './components/React-Lessons/CycleDeVieComposants/ChronometreFuncWithUseEffect';
 import ChronometreFuncUse from './components/React-Lessons/CycleDeVieComposants/ChronometreFuncWithUseEffect';
 import RefClasse from './components/React-Lessons/References/RefClasse';
 import UseRef from './components/React-Lessons/References/UseRef';
@@ -36,17 +36,29 @@ import DateObject from './components/Js-lessons/ObjetsJs/Date';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <AuthProvider>
         <Router>
           <Menu />
           <Routes>
             <Route path='/notionsdejs/lesbouclesjs' element={<LesBoucles />} />
-            <Route path='/notionsdejs/fonctionsettableaux' element={<FonctionsEtTableaux />} />
-            <Route path='/notionsdejs/controlerledom' element={<ControlerLeDom />} />
+            <Route
+              path='/notionsdejs/fonctionsettableaux'
+              element={<FonctionsEtTableaux />}
+            />
+            <Route
+              path='/notionsdejs/controlerledom'
+              element={<ControlerLeDom />}
+            />
             <Route path='/notionsdejs/dixhacks' element={<DixHacksJs />} />
-            <Route path='/notionsdejs/methodesjsmutatrices' element={<MethodesModify />} />
-            <Route path='/notionsdejs/methodesjsnonmutatrices' element={<MethodesNotModify />} />
+            <Route
+              path='/notionsdejs/methodesjsmutatrices'
+              element={<MethodesModify />}
+            />
+            <Route
+              path='/notionsdejs/methodesjsnonmutatrices'
+              element={<MethodesNotModify />}
+            />
             <Route path='/notionsdejs/why' element={<Why />} />
             <Route path='/notionsdejs/usefull' element={<UseFull />} />
             <Route path='/notionsdejs/callback' element={<CallBack />} />
@@ -56,9 +68,18 @@ function App() {
             <Route path='/notionsdejs/testerchild' element={<TesterChild />} />
             <Route path='/react/cycledevie' element={<CycleDeVie />} />
             <Route path='/react/chronoclasse' element={<Chronometre />} />
-            <Route path='/react/chronofuncnouseff' element={<ChronometreFunc />} />
-            <Route path='/react/chronofuncuseff' element={<ChronometreFuncUse />} />
-            <Route path='/react/chronofuncuseff' element={<ChronometreFuncWithUseEffect />} />
+            <Route
+              path='/react/chronofuncnouseff'
+              element={<ChronometreFunc />}
+            />
+            <Route
+              path='/react/chronofuncuseff'
+              element={<ChronometreFuncUse />}
+            />
+            <Route
+              path='/react/chronofuncuseff'
+              element={<ChronometreFuncWithUseEffect />}
+            />
             <Route path='/react/refclasse' element={<RefClasse />} />
             <Route path='/react/useref' element={<UseRef />} />
             <Route path='/react/usecontextlvl1' element={<UseContextLVL1 />} />
@@ -69,12 +90,17 @@ function App() {
             <Route path='/react/tictactoe' element={<Tictactoe />} />
             <Route path='/typescript/tachemanager' element={<TacheManager />} />
             <Route path='/typescript/classes' element={<Classes />} />
-            <Route path='/typescript/objetinterface' element={<ObjetInterface />} />
-            <Route path='/typescript/privatevsprotected' element={<PrivateVsProtected />} />
+            <Route
+              path='/typescript/objetinterface'
+              element={<ObjetInterface />}
+            />
+            <Route
+              path='/typescript/privatevsprotected'
+              element={<PrivateVsProtected />}
+            />
           </Routes>
         </Router>
       </AuthProvider>
-
     </div>
   );
 }
