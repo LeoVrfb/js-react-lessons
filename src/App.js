@@ -98,6 +98,10 @@ function App() {
               path='/typescript/privatevsprotected'
               element={<PrivateVsProtected />}
             />
+            <Route
+              path='/typescript/asconst'
+              element={<PrivateVsProtected />}
+            />
           </Routes>
         </Router>
       </AuthProvider>
